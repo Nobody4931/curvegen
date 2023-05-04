@@ -1,4 +1,4 @@
-SRC_FILES := main.go poly.go
+SRC_FILES := main.go poly.go util.go
 OUT_DIR := bin
 OUT_FILE := curvegen
 OUT_EXT :=
