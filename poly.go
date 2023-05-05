@@ -12,6 +12,14 @@ func NewPolynomial(degree int) *Polynomial {
 	}
 }
 
+func NewConstantPolynomial(constant float64) *Polynomial {
+	return &Polynomial{ Degree: 0, Coefficients: []float64{ constant } }
+}
+
+func NewZeroPolynomial(zero float64) *Polynomial {
+	return &Polynomial{ Degree: 1, Coefficients: []float64{ -zero, 1 } }
+}
+
 
 func (poly *Polynomial) Coefficient(coIdx int) float64 {
 	if 0 > coIdx || coIdx > poly.Degree {
