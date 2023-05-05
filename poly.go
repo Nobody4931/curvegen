@@ -21,7 +21,7 @@ func (poly *Polynomial) Coefficient(coIdx int) float64 {
 }
 
 
-func (poly *Polynomial) Negate() *Polynomial {
+func (poly *Polynomial) Neg() *Polynomial {
 	result := NewPolynomial(poly.Degree)
 	for coIdx := range result.Coefficients {
 		result.Coefficients[coIdx] = -poly.Coefficient(coIdx)
@@ -38,7 +38,7 @@ func (poly *Polynomial) Add(other *Polynomial) *Polynomial {
 }
 
 func (poly *Polynomial) Sub(other *Polynomial) *Polynomial {
-	return poly.Add(other.Negate())
+	return poly.Add(other.Neg())
 }
 
 func (poly *Polynomial) Mul(other *Polynomial) *Polynomial {
