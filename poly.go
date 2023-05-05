@@ -20,6 +20,16 @@ func (poly *Polynomial) Coefficient(coIdx int) float64 {
 	return poly.Coefficients[coIdx]
 }
 
+func (poly *Polynomial) Eval(x float64) float64 {
+	var result float64 = 0
+	var exp float64 = 1
+	for _, coeff := range poly.Coefficients {
+		result += coeff * exp
+		exp *= x
+	}
+	return result
+}
+
 
 func (poly *Polynomial) Neg() *Polynomial {
 	result := NewPolynomial(poly.Degree)
