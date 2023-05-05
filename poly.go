@@ -31,6 +31,20 @@ func (poly *Polynomial) Eval(x float64) float64 {
 }
 
 
+func (poly *Polynomial) Trim() *Polynomial {
+	degree := poly.Degree
+	for degree >= 0 {
+		if !fequal(poly.Coefficients[degree], 0) {
+			break
+		}
+		degree--
+	}
+	result := NewPolynomial(degree)
+	copy(result.Coefficients, poly.Coefficients)
+	return result
+}
+
+
 func (poly *Polynomial) Neg() *Polynomial {
 	result := NewPolynomial(poly.Degree)
 	for coIdx := range result.Coefficients {
