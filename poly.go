@@ -82,3 +82,7 @@ func (poly *Polynomial) Mul(other *Polynomial) *Polynomial {
 	}
 	return result
 }
+
+func (poly *Polynomial) MulC(constant float64) *Polynomial {
+	return poly.Mul(NewConstantPolynomial(constant))
+}
