@@ -1,5 +1,7 @@
 package main
 
+import "math"
+
 type Signed interface {
 	~int | ~int8 | ~int16 | ~int32 | ~int64
 }
@@ -35,4 +37,8 @@ func min[T Ordered](a, b T) T {
 	} else {
 		return b
 	}
+}
+
+func fequal(a, b float64) bool {
+	return math.Abs(a - b) < 1e-9
 }
