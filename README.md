@@ -1,13 +1,12 @@
 # Polynomial Curve Generator
 
-A simple tool used to generate a polynomial function that passes through
-an arbitrary amount of given points
+A simple tool used to generate a polynomial function that passes through an arbitrary set of points
 
 ## How does it work?
 
-Just a bit of simple algebra.
+Just a bit of simple algebra:
 
-Let's define `F_n(x_i) = y_i` for `i <= n`
+Let's define $F_n(x_i) = y_i$ for `i <= n`
 
 This means `F_1(x) = y_1`
 
